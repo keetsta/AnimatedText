@@ -30,17 +30,17 @@ struct ContentView: View {
                             Text(text)
                                 .bold()
                                 .transition(.identity)
-                                .onTapGesture {
-                                    if animate {
-                                        text = "Open"
-                                    } else {
-                                        text = "Close"
-                                    }
-                                    
-                                    withAnimation(.default) {
-                                        animate.toggle()
-                                    }
-                                }
+                        }
+                        .onTapGesture {
+                            if animate {
+                                text = "Open"
+                            } else {
+                                text = "Close"
+                            }
+                            
+                            withAnimation(.default) {
+                                animate.toggle()
+                            }
                         }
                         .foregroundStyle(.white)
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: animate ? .topLeading : .center)
